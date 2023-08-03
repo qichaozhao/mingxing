@@ -1,0 +1,127 @@
+{% extends 'layouts/main.jinja2' %}
+
+{% block content %}
+
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="container align-items-center justify-content-center" style="width: 50vh;">
+            <div class="row">
+                <div class="col">
+                    <form id="nameForm" class="text-center">
+                        <h1 class="mb-4 text-light">Enter Lookup Name</h1>
+                        <div class="mb-3">
+                            <input type="text" id="name" class="form-control" placeholder="Name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="result" class="text-center mt-5"></div>
+                    <div id="error" class="text-center mt-5"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-venus fa-spin fa-10x"></i></div>
+                    <div class="bubble"><i class="fa-solid fa-mars fa-spin fa-10x"></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#nameForm").submit(function (e) {
+                e.preventDefault();
+
+                var name = $("#name").val();
+
+                $.ajax({
+                    url: '/lookup?name=' + name,
+                    type: 'GET',
+                    success: function (data) {
+                        $("#error").html("<p></p>")
+
+                        console.log(data);
+
+                        // Parse the result and display it.
+                        let m_pct = parseFloat(data["male"]) * 100
+                        let f_pct = parseFloat(data["female"]) * 100
+                        let reason = data["reasoning"]
+
+                        // Depending on which is the greater value, display it
+                        let display_gender = m_pct > f_pct ? 'Male' : 'Female';
+                        let display_pct = m_pct > f_pct ? m_pct : f_pct
+
+                        $("#result").html(
+                            `<h3 class="text-light">${display_pct}% ${display_gender}</h3>` +
+                            `<p class="text-light">${reason}</p>`
+                        );
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        if (jqXHR.status == 400) {
+                            // Handle 400 error as success
+                            $("#result").html("<p></p>")
+                            $("#error").html("<p>" + JSON.stringify(jqXHR.responseText) + "</p>");
+                            console.log(jqXHR);
+                            console.log(errorThrown);
+                            console.log(textStatus);
+                        } else {
+                            console.log(errorThrown);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
