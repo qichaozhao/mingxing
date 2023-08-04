@@ -7,13 +7,17 @@ body {
 .fa-venus {
   opacity: 0.3;
   color: rgba(249,205,213,0.3);
-  z-index: 1000;
+  z-index: 50;
 }
 
 .fa-mars {
   opacity: 0.3;
   color: rgba(13,84,255,0.3);
-  z-index: 1000;
+  z-index: 50;
+}
+
+.form-col {
+  z-index: 100;
 }
 
 $bubble-count: 50;
@@ -35,7 +39,7 @@ $sway-type: "sway-left-to-right", "sway-right-to-left";
   left: var(--bubble-left-offset);
   bottom: -75%;
   display: block;
-  z-index: 1000;
+  z-index: 50;
   width: var(--bubble-radius);
   height: var(--bubble-radius);
   border-radius: 50%;
@@ -51,6 +55,7 @@ $sway-type: "sway-left-to-right", "sway-right-to-left";
     background: hsla(183, 94%, 76%, 0.3);
     border-radius: inherit;
     animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+    z-index: 50;
   }
 
   @for $i from 0 through $bubble-count {

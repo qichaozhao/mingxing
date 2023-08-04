@@ -5,20 +5,20 @@
     <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="container align-items-center justify-content-center" style="width: 50vh;">
             <div class="row">
-                <div class="col">
+                <div class="col form-col">
                     <form id="nameForm" class="text-center">
                         <h1 class="mb-4 text-light">Enter Lookup Name</h1>
                         <div class="mb-3">
                             <input type="text" id="name" class="form-control" placeholder="Name" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" style="z-index: 2000;">Submit</button>
                     </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div id="result" class="text-center mt-5"></div>
-                    <div id="error" class="text-center mt-5"></div>
+                    <div id="result" class="text-center mt-5 text-light"></div>
+                    <div id="error" class="text-center mt-5 text-danger"></div>
                 </div>
             </div>
             <div class="row">
@@ -104,8 +104,8 @@
                         let display_pct = m_pct > f_pct ? m_pct : f_pct
 
                         $("#result").html(
-                            `<h3 class="text-light">${display_pct}% ${display_gender}</h3>` +
-                            `<p class="text-light">${reason}</p>`
+                            `<h3>${display_pct}% ${display_gender}</h3>` +
+                            `<p>${reason}</p>`
                         );
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
