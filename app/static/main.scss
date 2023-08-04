@@ -1,19 +1,18 @@
 body {
   background: #1a1e23;
   margin: 0;
-  overflow: hidden;
   overflow-y: hidden;
 }
 
 .fa-venus {
-  opacity: 0.2;
-  color: rgba(249,205,213,0.2);
+  opacity: 0.3;
+  color: rgba(249,205,213,0.3);
   z-index: 1000;
 }
 
 .fa-mars {
-  opacity: 0.2;
-  color: rgba(13,84,255,0.2);
+  opacity: 0.3;
+  color: rgba(13,84,255,0.3);
   z-index: 1000;
 }
 

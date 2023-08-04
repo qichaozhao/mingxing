@@ -37,7 +37,11 @@ def lookup_route() -> Response:
         return Response("Non-Chinese characters detected", status=400)
 
     # Perform a lookup in redis
-    rds = redis.Redis(host=current_app.config['REDIS_HOST'], port=current_app.config['REDIS_PORT'],
+    rds = redis.Redis(host=current_app.config['REDIS_HOST'],
+                      port=current_app.config['REDIS_PORT'],
+                      password=current_app.config['REDIS_PWD'],
+                      ssl=current_app.config['REDIS_SSL'],
+                      ssl_ca_certs=current_app.config['CA_CERT_PATH'],
                       decode_responses=True)
     cached_name = rds.hgetall(lookup_name)
 
