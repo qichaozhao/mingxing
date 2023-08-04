@@ -16,11 +16,11 @@ greenlet==2.0.2
 htmlmin==0.1.12
 idna==3.4
 itsdangerous==2.1.2
-Jinja2 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6adj7x0ejx/croot/jinja2_1666908137966/work
+Jinja2==3.1.2
 jsmin==3.0.1
 lesscpy==0.15.1
 Mako==1.2.4
-MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d4a9444f-bd4c-4043-b47d-cede33979b0fve7bm42r/croots/recipe/markupsafe_1654597878200/work
+MarkupSafe==2.1.1
 multidict==6.0.4
 openai==0.27.8
 ply==3.11
@@ -36,8 +36,8 @@ SQLAlchemy==2.0.6
 tqdm==4.65.0
 typing_extensions==4.5.0
 urllib3==1.26.11
-uWSGI @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_bbt7bafsp5/croot/uwsgi_1688631121177/work
-Werkzeug @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_fegt3z60s3/croot/werkzeug_1679489762631/work
+uWSGI==2.0.21
+Werkzeug==2.2.3
 xxhash==3.2.0
 yarl==1.9.2
 zipp==3.8.1
