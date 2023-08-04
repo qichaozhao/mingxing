@@ -27,7 +27,7 @@ def init_configuration(app: Flask) -> None:
     app.config.from_object(f"config.{os.environ.get('APP_CONFIG')}")
 
     # Load the configuration from the instance folder
-    app.config.from_pyfile('config.py')
+    app.config.from_pyfile('config.py', silent=True)
 
 
 def create_app() -> Flask:
