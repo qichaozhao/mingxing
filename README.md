@@ -5,4 +5,5 @@ A small tool powered by LLM (currently OpenAI GPT) to lookup potential gender in
 ## Credits
 
 Flask-Backbone (https://github.com/abstractkitchen/flask-backbone)
+
 Bubble-Float (https://codepen.io/alphardex/pen/jOWMGON)
