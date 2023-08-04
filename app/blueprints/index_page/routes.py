@@ -36,13 +36,18 @@ def lookup_route() -> Response:
     if re.search(pattern, lookup_name) is not None:
         return Response("Non-Chinese characters detected", status=400)
 
-    # Perform a lookup in redis
-    rds = redis.Redis(host=current_app.config['REDIS_HOST'],
-                      port=current_app.config['REDIS_PORT'],
-                      password=current_app.config['REDIS_PWD'],
-                      ssl=current_app.config['REDIS_SSL'],
-                      decode_responses=True)
-    cached_name = rds.hgetall(lookup_name)
+    try:
+        # Perform a lookup in redis
+        rds = redis.Redis(host=current_app.config['REDIS_HOST'],
+                          port=current_app.config['REDIS_PORT'],
+                          password=current_app.config['REDIS_PWD'],
+                          ssl=current_app.config['REDIS_SSL'],
+                          decode_responses=True)
+        cached_name = rds.hgetall(lookup_name)
+
+    except Exception as e:
+        print(e)
+        return make_response(("Something went wrong with redis!", 400))
 
     # Increment the counter
     rds.incr(f"{lookup_name}_counter", 1)
