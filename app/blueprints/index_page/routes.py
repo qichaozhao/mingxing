@@ -41,7 +41,6 @@ def lookup_route() -> Response:
                       port=current_app.config['REDIS_PORT'],
                       password=current_app.config['REDIS_PWD'],
                       ssl=current_app.config['REDIS_SSL'],
-                      ssl_ca_certs=current_app.config['CA_CERT_PATH'],
                       decode_responses=True)
     cached_name = rds.hgetall(lookup_name)
 
